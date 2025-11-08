@@ -1,0 +1,13 @@
+# .gitea/workflows/gitea-demo.yml
+name: Gitea Actions Demo
+run-name: ${{ gitea.actor }} is testing out Gitea Actions 🚀
+on:
+  push:
+    branches: [ main ]   # <- явно указать ветку
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Workflow is running"
