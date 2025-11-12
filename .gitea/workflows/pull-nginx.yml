@@ -1,0 +1,15 @@
+# .github/workflows/
+name: Pull Nginx
+
+on:
+  workflow_dispatch:
+  # push:
+  #   branches: [main]
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pull nginx image
+        run: docker pull nginx

@@ -1,0 +1,4 @@
+# before_script:
+#   - 'echo "$CI_DEPLOY_KEY" > ~/.ssh/id_rsa'
+#   - chmod 600 ~/.ssh/id_rsa
+#   - ssh-keyscan -H host.com >> ~/.ssh/known_hosts

@@ -1,0 +1,45 @@
+name: SSH Test and Create Secret
+
+on:
+  push:
+    branches:
+      - main
+
+jobs: 
+  ssh-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update && \
+          sudo apt-get install -y openssh-client curl jq openssl
+
+      - name: Run SSH test and create secret
+        shell: bash
+        env:
+          GITEA_URL: ${{ secrets.GITEA_URL }}
+          GITEA_TOKEN: ${{ secrets.GITEA_TOKEN }}
+          REPO_OWNER: ${{ github.repository_owner }}
+          REPO_NAME: ${{ github.event.repository.name }}
+          SECRET_NAME: MY_SECRET
+          SECRET_VALUE: super_secret_value
+          REMOTE_HOST: example.com
+          REMOTE_USER: user
+          REMOTE_PORT: 22
+          TEST_COMMAND: echo Hello
+        run: |
+          chmod +x "${{ github.workspace }}/scripts/ssh_test_and_create_secrets.sh"
+          "${{ github.workspace }}/scripts/ssh_test_and_create_secrets.sh" \
+            --gitea-url "$GITEA_URL" \
+            --token "$GITEA_TOKEN" \
+            --owner "$REPO_OWNER" \
+            --repo "$REPO_NAME" \
+            --secret-name "$SECRET_NAME" \
+            --secret-value "$SECRET_VALUE" \
+            --remote-host "$REMOTE_HOST" \
+            --remote-user "$REMOTE_USER" \
+            --remote-port "$REMOTE_PORT" \
+            --test-command "$TEST_COMMAND"name: SSH Test and Create Secret
