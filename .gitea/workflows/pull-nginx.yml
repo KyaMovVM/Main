@@ -1,15 +1,31 @@
-# .github/workflows/
-name: Pull Nginx
+# .gitea/workflows/keep-nginx.yml
+name: Run Nginx
 
 on:
-  workflow_dispatch:
-  # push:
-  #   branches: [main]
+  workflow_dispatch:   # можно заменить на push
 
 jobs:
-  pull:
-    runs-on: ubuntu-latest
-
+  start-nginx:
+    runs-on: self-hosted
+    container:
+      image: docker:20.10.24      # содержит CLI
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock   # нужен, чтобы контейнер мог управлять демоном
     steps:
-      - name: Pull nginx image
+      - name: Check Docker
+        run: docker --version
+
+      - name: Pull nginx
         run: docker pull nginx
+
+      - name: Run nginx in background
+        run: |
+          # Если контейнер уже есть, удаляем, чтобы не конфликтовать
+          docker rm -f nginx-server || true
+          docker run -d \
+            --name nginx-server \
+            --restart always \
+            -p 8080:80 \
+            nginx
+          # Проверка
+          docker ps --filter "name=nginx-server"
