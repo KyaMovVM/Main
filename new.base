@@ -1,0 +1,8 @@
+views:
+  - type: table
+    name: Таблица
+    sort:
+      - property: file.name
+        direction: ASC
+  - type: cards
+    name: представление
