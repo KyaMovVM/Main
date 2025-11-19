@@ -218,11 +218,11 @@ queries by using a type system you define for your data.
 
 ### 6.2. WebKit Rendering Engine Architecture
 
-![[Pasted image 20251113064148.png]]
+![[image2.png]]
 
 ### 6.3. Firefox Browser Architecture
 
-![[Pasted image 20251113064305.png]]
+![[image3.png]]
 
 ## 7. Event Loop
 
@@ -311,36 +311,34 @@ have completed.
 
 ### 7.4. How tasks enter the queue
 
-![[Pasted image 20251113104527.png]]
+![[Loop2.png]]
 
-## 8.RENDER
+## 8. Render
 
-DOM -> CSSOM -> Render tree
+DOM → CSSOM → Render tree
 
 **Style calculation**
-Применение селекторов к элементам.
-Чем проще селектор - тем лучше.
+Применение селекторов к элементам. Чем проще селектор — тем лучше.
 
 **Layout**
-По размерам и позиции расставляет элементы.
+Вычисляет размеры и позиции элементов.
 
-*Paint**
-Рисует пиксели
+**Paint**
+Рисует пиксели на слоях.
 
 **Compositing**
-Работа со слоями
+Собирает слои для финального отображения.
 
-Render - дорогостоящая операция
+Render — дорогостоящая операция. Рендер вызывается при:
 
-Рендер вызывается:
-* Изменение окна
-* Изменение шрифта
-* Изменение контента
-* Добавление\Удаление классов\стилей
-* Работа с DOM
-* Изменение ориентации
-* Изменение размеров\позиции
-* Вычисление размеров\позиции
+- изменении окна
+- изменении шрифта
+- изменении контента
+- добавлении/удалении классов или стилей
+- манипуляции с DOM
+- изменении ориентации
+- изменении размеров или позиции элементов
+- перерасчёте размеров/позиций
 
 ## Node JS
 
@@ -348,19 +346,21 @@ V8 JS -> Машинный код
 Libuv - Cross I/O, Event loop
 
 Классический блокирующий ввод\вывод
-``` js
-let user = {name, secondName};
+```javascript
+let user = { name: 'Ivan', secondName: 'Petrov' };
 let count = 0;
 count += 1;
 user.count = count;
 database.save(user);
 return user;
 ```
+
 Многопоточность.
 Минусы:
-	Уходят ресурсы
-	Сложность управления
-	datelocks
+
+- Уходят ресурсы
+- Сложность управления
+- datelocks
 
 Серверная часть
     Поток 1 Обработка запросов Обработка запросов
@@ -408,7 +408,7 @@ Event Loop
     macOS Kqueue
 
 Event Loop Node JS
-![[Pasted image 20251113133809.png]]
+![[LoopImage.png]]
 
 (Promises)
 Tаймеры
@@ -461,17 +461,21 @@ Server-side rendering:
     NodeJS
 
 
-## 10 Markdown
+## 10. Markdown
 
-``` node
-npm install -g prettier (Install prettier globally.)
-npm install -g markdownlint-cli (Install markdownlint-cli globally.)
+```bash
+# Install tools
+npm install -g prettier       # Install prettier globally
+npm install -g markdownlint-cli  # Install markdownlint-cli globally
+
+# Run lint across markdown files
 markdownlint "**/*.md"
-npm prettier
+
+# Format files (example)
+prettier --write "**/*.md"
 ```
 
 ### Links
 
-https://chromium.googlesource.com/v8/v8.git
-https://libuv.org/
-
+- V8 source: <https://chromium.googlesource.com/v8/v8.git>
+- libuv: <https://libuv.org/>
