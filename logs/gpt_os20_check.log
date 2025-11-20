@@ -1,0 +1,25 @@
+{
+  "summary": {
+    "scanned": 2,
+    "errors": 0,
+    "timestamp": "2025-11-19T22:28:33.946Z"
+  },
+  "files": [
+    {
+      "file": "C:\\kyaserver\\Main\\EventLoopTest\\index.js",
+      "todos": [],
+      "syntax": {
+        "file": "C:\\kyaserver\\Main\\EventLoopTest\\index.js",
+        "ok": true
+      }
+    },
+    {
+      "file": "C:\\kyaserver\\Main\\lmstudio_models.js",
+      "todos": [],
+      "syntax": {
+        "file": "C:\\kyaserver\\Main\\lmstudio_models.js",
+        "ok": true
+      }
+    }
+  ]
+}
