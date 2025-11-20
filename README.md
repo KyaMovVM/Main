@@ -1,5 +1,20 @@
 # Main Project Documentation
 
+## Оглавление
+
+- [1. Project Overview](1-overview.md)
+- [2. Build and Testing](2-build.md)
+- [3. API Reference](3-api.md)
+- [4. REST API Architecture](4-rest.md)
+- [5. Other API Protocols](5-protocols.md)
+- [6. Browser Architecture](6-browser.md)
+- [7. Event Loop](7-event-loop.md)
+- [8. Render](8-render.md)
+- [9. Node.js](9-node.md)
+- [10. Markdown](10-markdown.md)
+- [11. ООП](11-oop.md)
+- [12. Тестирование](12-testing.md)
+
 ## 1. Project Overview
 
 This project is a lightweight API service demonstrating the operation of Gitea,
@@ -998,15 +1013,34 @@ class HTMLParser {
 ```
 
 ### Integration Tests
-Тесты модулей в связке
-square()
-convertDate()
-validate()
+Тесты модулей в связке, которые проверяют взаимодействие нескольких
+компонентов и функций.  В этом разделе описывается, как устроены
+интеграционные тесты и какие именно функции они проверяют.
 
+**Функции, которые участвуют в интеграционных тестах**
+* `square()` – проверяет корректность вычисления квадрата числа.
+* `convertDate()` – преобразует строку‑дата в объект `Date` и
+  проверяет правильность формата.
+* `validate()` – валидирует входные данные (число должно быть в
+  диапазоне 0–100).
+
+**Пример JSX‑структуры**
+```tsx
 <Component>
-  <OtherComponent 1/>
-  <OtherComponent 1/>
-<Component>
+  <OtherComponent id={1} />
+  <OtherComponent id={2} />
+</Component>
+```
+В этом примере родительский компонент `Component` рендерит два
+дочерних `OtherComponent`.  Интеграционные тесты проверяют, что
+данные, передаваемые родителем, корректно передаются и обрабатываются
+дочерними компонентами.
+
+**Разница между unit‑ и integration‑тестами**
+* **Unit‑тесты** проверяют отдельные функции или методы в изоляции.
+* **Интеграционные тесты** проверяют взаимодействие между несколькими
+  модулями/компонентами, гарантируя, что они работают совместно.
+  Это важно для обнаружения ошибок, которые не видны в unit‑тестах.
 
 ### E2E
 Важный функционал. Нажатия и тд.
@@ -1076,3 +1110,20 @@ describe('validateValue', () => {
     })
 })
 ```
+
+## Сводка содержимого README.md
+
+Раздел	Краткое содержание
+1. Project Overview	Описание проекта как лёгкого API‑сервиса, использующего Gitea, Act Runner и Docker. Перечислены ключевые папки (workflows, ssh scripts/, Test‑VRChat.sh).
+2. Build and Testing	Команды для запуска CI (act), скачивания NGINX‑образа и запуска тестов (Test‑VRChat.sh).
+3. API Reference	Перечень API‑эндпоинтов (/api/getUserProfile, /api/getUserSettings, /api/updateUser). Описаны принципы работы клиента (Tanstack Query / SWR), HTTP‑методы, статус‑коды и пример ответа от сервиса погоды.
+4. REST API Architecture	Обзор принципов REST: клиент‑сервер, безсостояние, кэширование, CRUD‑операции, идемпотентность, версии API и документация (OpenAPI/Swagger).
+5. Other API Protocols	Кратко о SOAP (WSDL, структура Envelope) и GraphQL.
+6. Browser Architecture	Структура браузера: UI → Browser Engine → Rendering Engine (WebKit/Gecko), сетевые, JS‑интерпретатор, UI‑backend. Включены схемы WebKit и Firefox.
+7. Event Loop	Пояснение стека вызовов, примеры factorial (stack overflow) и setTimeout. Описаны Task Queue, как задачи попадают в очередь, и схема Event Loop.
+8. Render	Пошаговый процесс рендеринга: DOM → CSSOM → Render tree → Layout → Paint → Composite. Перечислены события, вызывающие рендер.
+9. Node.js	Обзор V8, libuv, блокирующего/неблокирующего ввода/вывода, многопоточности, worker_threads, демультиплексор событий (epoll, IOCP, kqueue).
+10. Markdown	Инструкции по lint‑у и форматированию Markdown (prettier, markdownlint).
+11. ООП	Примеры процедурного и объектно‑ориентированного подходов, инкапсуляции, модификаторов доступа, наследования, полиморфизма, композиции/агрегации, интерфейсов и абстрактных классов.
+12. Тестирование	Пирамида тестов (Unit, Integration, E2E). Инструменты: Jest, React‑testing‑library, WebdriverIO, Storybook + Chromatic. Примеры unit‑тестов (square, validateValue, mapArrToString) и интеграционных тестов (square, convertDate, validate).
+Дополнительно	В конце файла приведён пример установки Jest, тестовый файл validateValue.test.js и его содержимое.
