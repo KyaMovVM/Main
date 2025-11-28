@@ -1,0 +1,3 @@
+[submodule "Main.wiki"]
+    path = Main.wiki
+    url = git@gitea.example.com:org/Main.wiki.git
