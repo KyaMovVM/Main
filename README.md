@@ -1127,3 +1127,13 @@ describe('validateValue', () => {
 11. ООП	Примеры процедурного и объектно‑ориентированного подходов, инкапсуляции, модификаторов доступа, наследования, полиморфизма, композиции/агрегации, интерфейсов и абстрактных классов.
 12. Тестирование	Пирамида тестов (Unit, Integration, E2E). Инструменты: Jest, React‑testing‑library, WebdriverIO, Storybook + Chromatic. Примеры unit‑тестов (square, validateValue, mapArrToString) и интеграционных тестов (square, convertDate, validate).
 Дополнительно	В конце файла приведён пример установки Jest, тестовый файл validateValue.test.js и его содержимое.
+
+## Проверка библиотек например на размер и скорость
+https://bundlephobia.com/
+
+## Мемоизация и оптимизации
+https://www.youtube.com/watch?v=VNNLNC5h7ZI
+https://habr.com/ru/companies/ruvds/articles/332384/
+
+## Функциональное программирование
+https://www.youtube.com/watch?v=ScgmlDb5ed4
