@@ -7,5 +7,12 @@
 			"path": "../Main.wiki"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"editor.defaultFormatter": "ms-vscode.js-debug",
+		"editor.formatOnPaste": true,
+		"editor.aiStats.enabled": true,
+		"telemetry.editStats.showStatusBar": true,
+		"telemetry.editStats.showDecorations": true,
+		"telemetry.editStats.details.enabled": true
+	}
 }
