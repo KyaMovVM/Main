@@ -2,7 +2,9 @@
 
 ## Оглавление
 
-- [1. Project Overview](1-overview.md)
+[KyaMovVM/Main/wiki](http://192.168.0.104:3000/KyaMovVM/Main/wiki)
+
+<!-- - [1. Project Overview](1-overview.md)
 - [2. Build and Testing](2-build.md)
 - [3. API Reference](3-api.md)
 - [4. REST API Architecture](4-rest.md)
@@ -13,7 +15,7 @@
 - [9. Node.js](9-node.md)
 - [10. Markdown](10-markdown.md)
 - [11. ООП](11-oop.md)
-- [12. Тестирование](12-testing.md)
+- [12. Тестирование](12-testing.md) -->
 
 ## 1. Project Overview
 
