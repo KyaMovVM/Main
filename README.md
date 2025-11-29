@@ -1183,3 +1183,6 @@ To help you create these files, Docker has a command called docker init. Run thi
 
 ## Webpack
 
+## gitea guidelines-frontend
+
+https://docs.gitea.com/contributing/guidelines-frontend
