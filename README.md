@@ -1164,3 +1164,22 @@ https://www.youtube.com/watch?v=ScgmlDb5ed4
 - Приложение будет доступно по адресу `http://94.41.87.98:3010`.
 - Время выполнения ограничено 15 минутами.
 - Все изменения в коде будут автоматически пересобраны и перезапущены.
+
+https://github.com/OWASP/CheatSheetSeries
+
+## Контейнерные заметки
+
+When working with containers, you usually need to create a Dockerfile to define your image and a compose.yaml file to define how to run it.
+
+To help you create these files, Docker has a command called docker init. Run this command in a project folder, and Docker will create all the required files needed. In this guide, you will see how this works.
+
+## k8s
+
+## terraform
+
+## Helm
+
+## Grafana
+
+## Webpack
+

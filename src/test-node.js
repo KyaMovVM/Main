@@ -1,7 +1,8 @@
 // Загружаем HTTP модуль
 const http = require("http");
 
-const hostname = "94.41.87.98";
+// Use 0.0.0.0 in container environments so the server is reachable from the host
+const hostname = "0.0.0.0";
 const port = 3010;
 
 // Создаём HTTP-сервер
