@@ -1,0 +1,21 @@
+{
+  "name": "japanese-game",
+  "version": "1.0.0",
+  "description": "Visual Novel game in Japanese",
+  "main": "novel.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "python -m http.server 8000"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "keywords": [
+    "visual-novel",
+    "game",
+    "japanese",
+    "fiction"
+  ],
+  "author": "",
+  "license": "ISC"
+}

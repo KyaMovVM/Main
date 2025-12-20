@@ -80,7 +80,9 @@ game.addScene({
     dialogue: 'Good morning! This is a Visual Novel demo. Choose your path.',
     choices: [
         { text: 'Talk to her', nextScene: 'scene_1' },
-        { text: 'Ignore her', nextScene: 'scene_2' }
+        { text: 'Ignore her', nextScene: 'scene_2' },
+        { text: 'Do nothing', nextScene: 'scene_0' },
+        { text: 'Think about キャさん', nextScene: 'scene_10' }
     ]
 });
 
@@ -152,3 +154,22 @@ game.addScene({
         { text: 'Start Over', nextScene: 'scene_0' }
     ]
 });
+
+game.addScene({
+    id: 'scene_10',
+    background: '🏫 School Classroom',
+    character: '👧 Character',
+    characterName: 'キャモフさん',
+    dialogue: 'こんにしわ。',
+    choices: [
+        { text: 'Talk to her', nextScene: 'scene_1' },
+        { text: 'Ignore her', nextScene: 'scene_2' },
+        { text: 'Do nothing', nextScene: 'scene_0' },
+        { text: 'Think about キャさん', nextScene: 'scene_0' }
+    ]
+});
+
+// Export for Node.js/Jest
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = VisualNovel;
+}
