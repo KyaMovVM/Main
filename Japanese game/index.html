@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Visual Novel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .game-container {
+            width: 90%;
+            max-width: 1024px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .game-screen {
+            display: flex;
+            height: 600px;
+            background: #333;
+        }
+
+        .background {
+            flex: 2;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .characters {
+            flex: 1;
+            background: #222;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 20px;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .dialogue-box {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 20px;
+            border-top: 3px solid #667eea;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .character-name {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .dialogue-text {
+            flex: 1;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .choices {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .choice-btn {
+            padding: 10px 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-align: left;
+        }
+
+        .choice-btn:hover {
+            background: #764ba2;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background: #f0f0f0;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #764ba2;
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-screen">
+            <div class="background" id="background">
+                [Background]
+            </div>
+            <div class="characters" id="characters">
+                [Characters]
+            </div>
+        </div>
+
+        <div class="dialogue-box">
+            <div>
+                <div class="character-name" id="characterName">Character Name</div>
+                <div class="dialogue-text" id="dialogueText">
+                    Welcome to the Visual Novel engine. This is a demo dialogue.
+                </div>
+            </div>
+            <div class="choices" id="choices">
+                <button class="choice-btn">Choice 1</button>
+                <button class="choice-btn">Choice 2</button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn" id="prevBtn">← Previous</button>
+            <button class="btn" id="nextBtn">Next →</button>
+            <button class="btn" id="menuBtn">Menu</button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="novel.js"></script>
+</body>
+</html>
