@@ -165,9 +165,79 @@ game.addScene({
         { text: 'Talk to her', nextScene: 'scene_1' },
         { text: 'Ignore her', nextScene: 'scene_2' },
         { text: 'Do nothing', nextScene: 'scene_0' },
+        { text: 'Think about キャさん', nextScene: 'scene_0' },
+        { text: 'Think about ぼうし', nextScene: 'scene_11' },
+        { text: 'Think more about キャさん', nextScene: 'scene_12' }
+    ]
+});
+
+game.addScene({
+    id: 'scene_11',
+    background: '🏫 School Classroom',
+    character: '👧 Character',
+    characterName: 'キャモフさん',
+    dialogue: 'それはキャモフさんのぼうしはあかいです！',
+    choices: [
+        { text: 'Talk to her', nextScene: 'scene_1' },
+        { text: 'Ignore her', nextScene: 'scene_2' },
+        { text: 'Do nothing', nextScene: 'scene_0' },
         { text: 'Think about キャさん', nextScene: 'scene_0' }
     ]
 });
+
+game.addScene({
+    id: 'scene_12',
+    background: 'Cosmos',
+    character: '👧 Character',
+    characterName: 'キャモフさん',
+    dialogue: 'はじめまして、キャモフさんと言います。',
+    choices: [
+        { text: 'Talk to her', nextScene: 'scene_1' },
+        { text: 'Ignore her', nextScene: 'scene_2' },
+        { text: 'Do nothing', nextScene: 'scene_0' },
+        { text: 'Think about キャさん', nextScene: 'scene_0' },
+        { text: 'どんな本がすきですか。', nextScene: 'scene_13' }
+    ]
+});
+
+game.addScene({
+    id: 'scene_13',
+    background: 'Cosmos',
+    character: '👧 Character',
+    characterName: 'キャモフさん',
+    dialogue: '日本のまんががすきです。',
+    choices: [
+        { text: 'Talk to her', nextScene: 'scene_1' },
+        { text: 'Ignore her', nextScene: 'scene_2' },
+        { text: 'Do nothing', nextScene: 'scene_0' },
+        { text: 'Think about キャさん', nextScene: 'scene_0' },
+        { text: 'どんな本がすきですか。', nextScene: 'scene_0' }
+    ]
+});
+
+// くうこうはあそこです。
+// 私のかのじょです
+// どんな本がすきですか。
+// 日本のまんががすきです。
+// まいにちアメリカのおんがくをききます。
+// まいばん
+// コメディはちょっと
+// アクション
+// イギリスはどうですか。
+// ひるごはん
+// あさごはん
+
+// Аэропорт вон там.
+// Это моя девушка.
+// Какие книги тебе нравятся?
+// Мне нравится японская манга.
+// Я слушаю американскую музыку каждый день.
+// Каждый вечер.
+// Немного комедии.
+// Боевик.
+// Как дела в Англии?
+// Обед.
+// Завтрак.
 
 // Export for Node.js/Jest
 if (typeof module !== 'undefined' && module.exports) {

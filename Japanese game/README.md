@@ -35,4 +35,4 @@ npx http-server
 
 ## Лицензия
 
-ISC
+none
