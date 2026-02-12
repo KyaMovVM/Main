@@ -1,8 +1,15 @@
 # Main Project Documentation
 
+Research first (Localhost obsidian)
+Добавить идеи в Linear?
+
 ## Оглавление
 
-[KyaMovVM/Main/wiki](http://192.168.0.104:3000/KyaMovVM/Main/wiki)
+Можно настроить зеркало Github -> Gitea на локальный компьютер.
+[Linea](https://linear.app/kyamovvm/project/kyaserver-monorepo-fd8e309de16d/overview)
+[Gitea](http://localhost:3000/)
+
+[KyaMovVM/Main/wiki](https://github.com/KyaMovVM/KyaMovVM.github.io)
 
 - [1. Overview](../wiki/1-overview.md)
 - [2. Build](../wiki/2-build.md)
@@ -25,6 +32,7 @@ https://bundlephobia.com/
 ## Мемоизация и оптимизации
 
 https://www.youtube.com/watch?v=VNNLNC5h7ZI
+
 https://habr.com/ru/companies/ruvds/articles/332384/
 
 ## Функциональное программирование
